@@ -1,0 +1,374 @@
+/* --- RESET BÁSICO --- */
+/* Sirve para eliminar los márgenes y rellenos que los navegadores aplican por defecto, asegurando que el diseño se vea igual en todas partes. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- ESTILOS GLOBALES --- */
+/* Define la apariencia general de toda la página. */
+body {
+    font-family: 'Orbitron', Arial, sans-serif;
+    /* Fuente principal de la página */
+    background-color: #0A0A0A;
+    /* Color de fondo si la imagen no carga */
+    background-image: url('https://www.transparenttextures.com/patterns/inspiration-geometry.png');
+    /* Imagen de fondo con textura */
+    color: #E0E0E0;
+    /* Color de texto principal */
+    line-height: 1.6;
+    /* Espacio entre líneas de texto */
+    text-align: center;
+    /* Centra todo el texto por defecto */
+}
+
+/* Estilo para los títulos principales (h1, h2, h3) */
+h1,
+h2,
+h3 {
+    text-transform: uppercase;
+    /* Convierte el texto a mayúsculas */
+    letter-spacing: 2px;
+    /* Espacio entre letras */
+}
+
+/* --- ENCABEZADO Y PERFIL --- */
+/* Estilos para el bloque del encabezado. */
+header {
+    padding: 2rem 1rem;
+    background: #0A0A0A;
+}
+
+/* Contenedor de la imagen de perfil, le da la forma hexagonal. */
+.perfil-img-container {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 1.5rem auto;
+    /* Centra el contenedor */
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    /* 'clip-path' recorta el elemento para darle una forma de hexágono. */
+    background-color: #F8F000;
+}
+
+/* Estilos para la imagen de perfil dentro del contenedor. */
+.perfil-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Hace que la imagen cubra todo el espacio sin deformarse. */
+    transform: scale(0.95);
+    /* La hace un poco más pequeña para que el borde se vea mejor. */
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    /* También se le aplica el hexágono a la imagen misma. */
+}
+
+/* Estilos para el nombre (título principal). */
+header h1 {
+    font-size: 2.5rem;
+    color: #F8F000;
+    text-shadow: 2px 2px 0px #111;
+    /* Sombra de texto para darle profundidad. */
+}
+
+/* Estilos para el subtítulo. */
+header p {
+    color: #E0E0E0;
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+}
+
+/* --- NAVEGACIÓN --- */
+/* Estilos para la barra de navegación. */
+nav {
+    margin-top: 2rem;
+    border-top: 1px solid rgba(232, 248, 0, 0.2);
+    /* Línea divisoria superior. */
+    padding-top: 1.5rem;
+    padding: 1rem 0; 
+    border-top: 1px solid rgba(248, 240, 0, 0.2);
+      border-bottom: 1px solid rgba(248, 240, 0, 0.2);
+    
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #0a0a0a27; 
+}
+
+/* Estilos para la lista de enlaces del menú. */
+nav ul {
+    list-style: none;
+    /* Quita los puntos de la lista. */
+    display: flex;
+    /* Usa Flexbox para alinear los enlaces horizontalmente. */
+    justify-content: center;
+    /* Centra los enlaces. */
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+/* Estilos para cada enlace del menú. */
+nav a {
+    color: #E0E0E0;
+    text-decoration: none;
+    /* Quita el subrayado. */
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    position: relative;
+    transition: all 0.3s ease;
+    /* Animación suave para los cambios. */
+}
+
+/* Efecto de subrayado que aparece al pasar el mouse (hover). */
+nav a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #F8F000;
+    transform: scaleX(0);
+    /* Inicialmente, la línea no tiene ancho. */
+    transition: transform 0.3s ease;
+}
+
+/* Cuando se pasa el mouse sobre el enlace... */
+nav a:hover {
+    color: #F8F000;
+    /* Cambia el color del texto. */
+}
+
+nav a:hover::before {
+    transform: scaleX(1);
+    /* La línea de abajo crece hasta el 100% del ancho. */
+}
+
+/* --- SECCIONES GENÉRICAS --- */
+/* Estilos que se aplican a todas las secciones principales (Sobre mí, Intereses, Contacto). */
+section {
+    padding: 4rem 1rem;
+    max-width: 1200px;
+    margin: auto;
+    border-bottom: 1px solid rgba(248, 240, 0, 0.2);
+}
+
+section:last-of-type {
+    border-bottom: none;
+    /* Quita la línea divisoria de la última sección. */
+}
+
+section h2 {
+    color: #F8F000;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+/* ========= SECCIÓN DE INTERESES ========= */
+/* Oculta los botones de radio, ya que se controlan con los 'label'. */
+input[name="interes-selector"] {
+    display: none;
+}
+
+/* Contenedor principal de la sección, establece el layout de dos columnas con Flexbox. */
+.intereses-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+    /* Centra las columnas verticalmente. */
+}
+
+/* Estilos para la columna izquierda (la lista de botones). */
+.intereses-lista {
+    flex: 1;
+    min-width: 300px;
+    max-width: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Cambia el cursor a una 'manita' para indicar que las tarjetas son clickeables. */
+.intereses-lista label {
+    cursor: pointer;
+}
+
+/* Estilos para las tarjetas clickeables de la izquierda. */
+.interes-card {
+    background-color: #111111;
+    border: 1px solid #F8F000;
+    padding: 1.5rem;
+    text-align: left;
+    transition: all 0.3s ease;
+    clip-path: polygon(0 15px, 15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%);
+    /* Forma con esquinas cortadas. */
+}
+
+/* Efecto al pasar el mouse sobre las tarjetas. */
+.interes-card:hover {
+    border-color: #FF003C;
+    transform: translateY(-5px);
+    /* La mueve ligeramente hacia arriba. */
+    background-color: #1a1a1a;
+}
+
+/* ESTILO DE LA TARJETA ACTIVA. */
+/* Cuando un input está seleccionado (:checked), este código busca su 'label' correspondiente y le aplica un estilo diferente para mostrar que está activo. */
+#select-videojuegos:checked~.intereses-layout .intereses-lista label[for="select-videojuegos"] .interes-card,
+#select-anime:checked~.intereses-layout .intereses-lista label[for="select-anime"] .interes-card,
+#select-peliculas:checked~.intereses-layout .intereses-lista label[for="select-peliculas"] .interes-card,
+#select-musica:checked~.intereses-layout .intereses-lista label[for="select-musica"] .interes-card {
+    border-color: #FF003C;
+    background-color: #1a1a1a;
+    transform: translateY(-5px);
+}
+
+.interes-card h3 {
+    color: #F8F000;
+}
+
+.interes-card p {
+    color: #FFFFFF;
+    font-size: 0.95rem;
+}
+
+/* Estilos para la columna derecha (el contenedor de detalles). */
+.intereses-detalle {
+    flex: 1.5;
+    min-width: 350px;
+    max-width: 55%;
+    background-color: #111111;
+    border: 1px solid #F8F000;
+    padding: 1.5rem;
+    text-align: center;
+    clip-path: polygon(0 15px, 15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%);
+
+    /* Usa Flexbox para centrar verticalmente su contenido interno (el título y la galería). */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Por defecto, todos los paneles de contenido están ocultos. */
+.detalle-contenido {
+    display: none;
+    animation: fadeIn 0.5s ease-out forwards;
+    /* Animación de entrada. */
+}
+
+/* Define la animación 'fadeIn'. */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* LÓGICA PARA MOSTRAR CONTENIDO: La otra parte de la "magia". */
+/* Cuando un input está seleccionado (:checked), este código busca el panel de contenido correspondiente y lo hace visible (display: block). */
+#select-videojuegos:checked~.intereses-layout .intereses-detalle #detalle-videojuegos,
+#select-anime:checked~.intereses-layout .intereses-detalle #detalle-anime,
+#select-peliculas:checked~.intereses-layout .intereses-detalle #detalle-peliculas,
+#select-musica:checked~.intereses-layout .intereses-detalle #detalle-musica {
+    display: block;
+}
+
+/* Estilos para la galería de imágenes. */
+.gallery {
+    display: grid;
+    /* Usa CSS Grid para crear una cuadrícula de imágenes. */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    /* Crea columnas flexibles que se adaptan al espacio. */
+    gap: 15px;
+    margin-top: 1.5rem;
+}
+
+/* Estilos para cada imagen en la galería. */
+.gallery img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: contain;
+    /* Asegura que la imagen completa quepa sin ser recortada. */
+    border: 1px solid #F8F000;
+    transition: transform 0.3s ease;
+    background-color: #0A0A0A;
+    padding: 5px;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    /* Agranda la imagen ligeramente al pasar el mouse. */
+    border-color: #FF003C;
+}
+
+/* --- BOTÓN PRINCIPAL --- */
+/* Estilos para el botón de Instagram. */
+.btn {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 1rem 2.5rem;
+    background: #F8F000;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    border: none;
+    clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
+    /* Forma con esquinas cortadas. */
+}
+
+.btn:hover {
+    background: #FF003C;
+    color: #FFF;
+    transform: scale(1.05);
+}
+
+/* --- FOOTER --- */
+/* Estilos para el pie de página. */
+footer {
+    padding: 1.5rem;
+    background: #0A0A0A;
+    border-top: 4px solid #F8F000;
+    color: #F8F000;
+}
+
+/* --- RESPONSIVO --- */
+/* Estilos que solo se aplican en pantallas pequeñas (ancho máximo de 768px), como celulares. */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+    }
+
+    nav ul {
+        gap: 0.5rem;
+    }
+
+    nav a {
+        padding: 0.5rem;
+    }
+
+    /* En pantallas pequeñas, las dos columnas de 'Intereses' se apilan una sobre otra en lugar de estar lado a lado. */
+    .intereses-layout {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .intereses-lista,
+    .intereses-detalle {
+        max-width: 100%;
+        min-width: unset;
+    }
+}

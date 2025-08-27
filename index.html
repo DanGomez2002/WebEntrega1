@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi pagina web</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="https://i.redd.it/fut0xdm9jlg71.jpg">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="perfil-img-container">
+            <img src="img/perfil.jpg" alt="Foto de Carlos Daniel" class="perfil-img">
+        </div>
+
+        <h1>Carlos Daniel Gómez Murcia</h1>
+        <p>Estudiante de Ingeniería de Sistemas</p>
+        
+    </header>
+         <nav>
+            <ul>
+                <li><a href="#sobre-mi">Sobre mí</a></li>
+                <li><a href="#intereses">Intereses</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+
+    <section id="sobre-mi">
+        <h2>SOBRE MÍ</h2>
+        <p>Soy estudiante de Ingeniería de Sistemas, apasionado por la tecnología y el mundo digital. .</p>
+    </section>
+
+    <section id="intereses">
+        <h2>MIS INTERESES</h2>
+
+        <input type="radio" name="interes-selector" id="select-videojuegos" checked>
+        <input type="radio" name="interes-selector" id="select-anime">
+        <input type="radio" name="interes-selector" id="select-peliculas">
+        <input type="radio" name="interes-selector" id="select-musica">
+
+        <div class="intereses-layout">
+            
+            <div class="intereses-lista">
+                <label for="select-videojuegos">
+                    <div class="interes-card">
+                        <h3>🎮 Videojuegos</h3>
+                        <p>Mi genero favorito es el RPG.</p>
+                    </div>
+                </label>
+                <label for="select-anime">
+                    <div class="interes-card">
+                        <h3>📺 Anime</h3>
+                        <p>Disfruto de géneros como Shonen, Seinen y ciencia ficción.</p>
+                    </div>
+                </label>
+                <label for="select-peliculas">
+                    <div class="interes-card">
+                        <h3>🎬 Películas</h3>
+                        <p>Me gustan las pelis de ciencia ficción, thriller y fantasía.</p>
+                    </div>
+                </label>
+                <label for="select-musica">
+                    <div class="interes-card">
+                        <h3>🎶 Música</h3>
+                        <p>Escucho una gran variedad, desde rock hasta synthwave.</p>
+                    </div>
+                </label>
+            </div>
+
+            <div class="intereses-detalle">
+                <div id="detalle-videojuegos" class="detalle-contenido">
+                    <h3>Mis Videojuegos Favoritos</h3>
+                    <div class="gallery">
+                        <img src="img/videojuego1.jpg" alt="Videojuego Favorito 1">
+                        <img src="img/videojuego2.jpg" alt="Videojuego Favorito 2">
+                        <img src="img/videojuego3.jpg" alt="Videojuego Favorito 3">
+                        
+                    </div>
+                </div>
+                <div id="detalle-anime" class="detalle-contenido">
+                    <h3>Animes que Recomiendo</h3>
+                    <div class="gallery">
+                        <img src="img/anime1.jpg" alt="Anime 1">
+                        <img src="https://es.web.img3.acsta.net/pictures/19/09/16/17/09/4903250.jpg" alt="Anime 2">
+                        <img src="https://m.media-amazon.com/images/M/MV5BYzYxOTlkYzctNGY2MC00MjNjLWIxOWMtY2QwYjcxZWIwMmEwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Anime 3">
+                        <img src="img/anime4.jpg" alt="Anime 4">
+                        <img src="https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p22416085_b_v13_ac.jpg" alt="Anime 5">
+                        <img src="https://cdn.myanimelist.net/images/anime/3/73178.jpg" alt="Anime 6">
+                    </div>
+                </div>
+                <div id="detalle-peliculas" class="detalle-contenido">
+                    <h3>Mis recomendaciones</h3>
+                    <div class="gallery">
+                        <img src="https://es.web.img3.acsta.net/pictures/17/10/03/08/45/4260918.jpg" alt="Pelicula 1">
+                        <img src="https://es.web.img2.acsta.net/pictures/14/10/01/14/23/336368.jpg" alt="Pelicula 2">
+                        <img src="https://es.web.img3.acsta.net/c_310_420/pictures/18/10/03/19/36/5818625.jpg" alt="Pelicula 3">
+                        <img src="https://i.pinimg.com/736x/c0/72/57/c07257ef5681c8f309b4a69ccd04fcc1.jpg" alt="Pelicula 4">
+                        <img src="https://m.media-amazon.com/images/M/MV5BOTgyOGQ1NDItNGU3Ny00MjU3LTg2YWEtNmEyYjBiMjI1Y2M5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Pelicula 5">
+                        <img src="https://i.pinimg.com/736x/3f/09/dd/3f09ddcc1d3c3740f6a74e63d57fba61.jpg" alt="Pelicula 6">
+                    </div>
+                </div>
+                <div id="detalle-musica" class="detalle-contenido">
+                     <h3>Artistas favoritos</h3>
+                     <div class="gallery">
+                        <img src="https://ih1.redbubble.net/image.2955590937.5731/flat,750x,075,f-pad,750x1000,f8f8f8.jpg" alt="Artista 1">
+                        <img src="https://m.media-amazon.com/images/I/61LsXpUgxdL.jpg" alt="Artista 2">
+                        <img src="https://i.ebayimg.com/images/g/GDIAAOSw5Kxm~nFu/s-l1200.png" alt="Artista 3">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contacto">
+        <h2>CONTACTO</h2>
+        <p>Mis redes sociales:</p>
+        <a href="https://www.instagram.com/dangomez____/" target="_blank" class="btn">Instagram</a>
+        <a href="https://discordapp.com/users/649379961639010374" class="btn">Discord</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Carlos Daniel Gómez Murcia</p>
+    </footer>
+</body>
+</html>
