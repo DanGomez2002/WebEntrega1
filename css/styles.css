@@ -1,5 +1,4 @@
-/* --- RESET BÁSICO --- */
-/* Sirve para eliminar los márgenes y rellenos que los navegadores aplican por defecto, asegurando que el diseño se vea igual en todas partes. */
+
 * {
     margin: 0;
     padding: 0;
@@ -10,17 +9,11 @@
 /* Define la apariencia general de toda la página. */
 body {
     font-family: 'Orbitron', Arial, sans-serif;
-    /* Fuente principal de la página */
     background-color: #0A0A0A;
-    /* Color de fondo si la imagen no carga */
     background-image: url('https://www.transparenttextures.com/patterns/inspiration-geometry.png');
-    /* Imagen de fondo con textura */
     color: #E0E0E0;
-    /* Color de texto principal */
     line-height: 1.6;
-    /* Espacio entre líneas de texto */
     text-align: center;
-    /* Centra todo el texto por defecto */
 }
 
 /* Estilo para los títulos principales (h1, h2, h3) */
@@ -28,26 +21,22 @@ h1,
 h2,
 h3 {
     text-transform: uppercase;
-    /* Convierte el texto a mayúsculas */
     letter-spacing: 2px;
-    /* Espacio entre letras */
 }
 
 /* --- ENCABEZADO Y PERFIL --- */
-/* Estilos para el bloque del encabezado. */
 header {
     padding: 2rem 1rem;
     background: #0A0A0A;
 }
 
-/* Contenedor de la imagen de perfil, le da la forma hexagonal. */
+/* Contenedor de la imagen de perfil. */
 .perfil-img-container {
     width: 200px;
     height: 200px;
     margin: 0 auto 1.5rem auto;
-    /* Centra el contenedor */
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    /* 'clip-path' recorta el elemento para darle una forma de hexágono. */
+    /* recorta la margen del contenedor la foto para dejarle la forma*/
     background-color: #F8F000;
 }
 
@@ -56,19 +45,16 @@ header {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* Hace que la imagen cubra todo el espacio sin deformarse. */
     transform: scale(0.95);
-    /* La hace un poco más pequeña para que el borde se vea mejor. */
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    /* También se le aplica el hexágono a la imagen misma. */
+    
 }
 
-/* Estilos para el nombre (título principal). */
+/* Estilos para el nombre */
 header h1 {
     font-size: 2.5rem;
     color: #F8F000;
-    text-shadow: 2px 2px 0px #111;
-    /* Sombra de texto para darle profundidad. */
+    text-shadow: 2px 2px 0px #FF003C;
 }
 
 /* Estilos para el subtítulo. */
@@ -76,6 +62,7 @@ header p {
     color: #E0E0E0;
     font-size: 1.1rem;
     margin-top: 0.5rem;
+    
 }
 
 /* --- NAVEGACIÓN --- */
@@ -83,11 +70,10 @@ header p {
 nav {
     margin-top: 2rem;
     border-top: 1px solid rgba(232, 248, 0, 0.2);
-    /* Línea divisoria superior. */
     padding-top: 1.5rem;
     padding: 1rem 0; 
     border-top: 1px solid rgba(248, 240, 0, 0.2);
-      border-bottom: 1px solid rgba(248, 240, 0, 0.2);
+    border-bottom: 1px solid rgba(248, 240, 0, 0.2);
     
     position: sticky;
     top: 0;
@@ -102,7 +88,6 @@ nav ul {
     display: flex;
     /* Usa Flexbox para alinear los enlaces horizontalmente. */
     justify-content: center;
-    /* Centra los enlaces. */
     flex-wrap: wrap;
     gap: 1.5rem;
 }
@@ -141,11 +126,10 @@ nav a:hover {
 
 nav a:hover::before {
     transform: scaleX(1);
-    /* La línea de abajo crece hasta el 100% del ancho. */
 }
 
 /* --- SECCIONES GENÉRICAS --- */
-/* Estilos que se aplican a todas las secciones principales (Sobre mí, Intereses, Contacto). */
+/* Estilos que se aplican a todas las secciones principales  */
 section {
     padding: 4rem 1rem;
     max-width: 1200px;
@@ -201,7 +185,7 @@ input[name="interes-selector"] {
     border: 1px solid #F8F000;
     padding: 1.5rem;
     text-align: left;
-    transition: all 0.3s ease;
+    transition: all 0.7s ease;
     clip-path: polygon(0 15px, 15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%);
     /* Forma con esquinas cortadas. */
 }
@@ -244,8 +228,6 @@ input[name="interes-selector"] {
     padding: 1.5rem;
     text-align: center;
     clip-path: polygon(0 15px, 15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%);
-
-    /* Usa Flexbox para centrar verticalmente su contenido interno (el título y la galería). */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -258,7 +240,7 @@ input[name="interes-selector"] {
     /* Animación de entrada. */
 }
 
-/* Define la animación 'fadeIn'. */
+/* Define la animación para que salgan los intereses */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -283,9 +265,7 @@ input[name="interes-selector"] {
 /* Estilos para la galería de imágenes. */
 .gallery {
     display: grid;
-    /* Usa CSS Grid para crear una cuadrícula de imágenes. */
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    /* Crea columnas flexibles que se adaptan al espacio. */
     gap: 15px;
     margin-top: 1.5rem;
 }
@@ -307,6 +287,70 @@ input[name="interes-selector"] {
     /* Agranda la imagen ligeramente al pasar el mouse. */
     border-color: #FF003C;
 }
+/* ========= SECCIÓN "ACTUALMENTE..." ========= */
+
+/* Contenedor principal */
+.actualmente-container {
+    display: flex; 
+    justify-content: center; 
+    align-items: stretch; 
+    flex-wrap: wrap; 
+    gap: 2rem; 
+}
+
+/* Estilos para cada tarjeta individual. */
+.actualmente-card {
+    background-color: #111111; 
+    border: 1px solid #F8F000; 
+    width: 300px; 
+    text-align: center; 
+    transition: all 0.3s ease; /* Aplica una animación suave a todos los cambios */
+    clip-path: polygon(0 15px, 15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%); 
+    display: flex; 
+    flex-direction: column; 
+}
+
+/* Efecto al pasar el mouse sobre la tarjeta. */
+.actualmente-card:hover {
+    transform: translateY(-5px); 
+    border-color: #FF003C; 
+}
+
+/* Estilos para la imagen dentro de la tarjeta. */
+.actualmente-card img {
+    width: 100%; 
+    height: 200px; 
+    object-fit: cover; 
+}
+
+/* Contenedor para el texto de la tarjeta. */
+.actualmente-card .card-content {
+    padding: 1.5rem; 
+    flex-grow: 1; 
+    display: flex; 
+    flex-direction: column; 
+}
+
+/* Estilos para el subtítulo de la tarjeta (ej. "Actualmente Jugando"). */
+.actualmente-card h3 {
+    font-size: 1rem;
+    color: #F8F000;
+}
+
+/* Estilos para el párrafo principal (ej. "The Witcher 3..."). */
+.actualmente-card p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    flex-grow: 1; 
+    margin: 0.5rem 0; 
+}
+
+/* Estilos para el comentario en cursiva al final de la tarjeta. */
+.actualmente-card .comment {
+    font-size: 0.9rem;
+    color: #aaa; 
+    font-style: italic; 
+}
 
 /* --- BOTÓN PRINCIPAL --- */
 /* Estilos para el botón de Instagram. */
@@ -323,7 +367,6 @@ input[name="interes-selector"] {
     transition: all 0.3s ease;
     border: none;
     clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
-    /* Forma con esquinas cortadas. */
 }
 
 .btn:hover {
@@ -340,6 +383,7 @@ footer {
     border-top: 4px solid #F8F000;
     color: #F8F000;
 }
+
 
 /* --- RESPONSIVO --- */
 /* Estilos que solo se aplican en pantallas pequeñas (ancho máximo de 768px), como celulares. */
