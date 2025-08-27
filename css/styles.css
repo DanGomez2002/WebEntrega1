@@ -144,6 +144,7 @@ section:last-of-type {
 
 section h2 {
     color: #F8F000;
+    text-shadow: 2px 2px 0px #FF003C;
     margin-bottom: 2rem;
     font-size: 2rem;
 }
